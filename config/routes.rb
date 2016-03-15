@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :beliefs
+  resources :distortions
+  resources :lady_bugs
+  resources :logs
+  resources :tags
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,2 @@
+module LogTagsHelper
+end

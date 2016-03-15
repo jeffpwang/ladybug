@@ -1,0 +1,2 @@
+class LogTagsController < ApplicationController
+end
