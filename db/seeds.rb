@@ -23,6 +23,10 @@ unlovable = Belief.create(name: "unlovable")
 helplessness = Belief.create(name: "helplessness")
 entitled = Belief.create(name: "entitled")
 
+ladybug_one = LadyBug.create(content: "you had a really great time with your friends yesterday")
+ladybug_two = LadyBug.create(content: "you finished all of your homework early")
+ladybug_three = LadyBug.create(content: "you got an A on that test")
+
 tommy.logs.build(content: "I always lose.", before_rating: 3, after_rating: 6, distortion: all_or_nothing, belief: helplessness, tags: [work_tag] )
 angelica.logs.build(content: "I should have done better.", before_rating: 5, after_rating: 6, distortion: mind_reading, belief: entitled, tags: [work_tag, school_tag])
 angelica.logs.build(content: "Nobody likes me.", before_rating: 2, after_rating: 7, distortion: should, belief: unlovable, tags: [work_tag, relationship_tag])

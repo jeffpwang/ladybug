@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   resources :beliefs
   resources :distortions
   resources :lady_bugs
@@ -13,6 +12,12 @@ Rails.application.routes.draw do
   get 'contact'  => 'static_pages#contact'
 
 
+
+    get 'login' to: 'sessions#new' as: 'login' 
+
+    post '/sessions' => 'sessions#create'
+    delete '/sessions' => 'sessions#destroy' as: 'logout'
+    
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

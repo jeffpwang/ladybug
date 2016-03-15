@@ -1,3 +1,4 @@
+
 # == Schema Information
 #
 # Table name: users
@@ -12,5 +13,9 @@ class User < ActiveRecord::Base
      has_many :ladybugs, through: :logs
      has_many :distortions, through: :logs
      has_many :beliefs, through: :logs
+     has_many :tags, through: :logs
 
+     validates :name, presence: true
+     validates :email, presence: true
+     
 end
