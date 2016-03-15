@@ -1,0 +1,15 @@
+<h1>Feeling Log</h1>
+
+<%= form_for(@log) do |f| %>
+
+<%= f.label :before_rating %>
+<%= f.select :before_rating, (1..10) %><br>
+<%= f.label :content %>
+<%= f.text_area :content %><br>
+<%= f.label :after_rating %>
+<%= f.select :after_rating, (1..10) %>
+<%= f.collection_select :belief_id, Belief.all, :id, :name %>
+<%= f.collection_select :distortion_id, Distortion.all, :id, :name %>
+
+<%= f.submit %>
+<%end%>
