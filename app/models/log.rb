@@ -26,4 +26,7 @@ class Log < ActiveRecord::Base
 	accepts_nested_attributes_for :ladybugs
 	accepts_nested_attributes_for :tags
 	
+	validates :content, presence: true
+	validates :before_rating, presence: true, :inclusion => 1..10
+	validates :after_rating, presence: true, :inclusion => 1..10
 end
