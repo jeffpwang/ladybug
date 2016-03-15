@@ -1,0 +1,2 @@
+class DistortionsController < ApplicationController
+end

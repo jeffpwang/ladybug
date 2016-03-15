@@ -1,0 +1,2 @@
+module LadybugsHelper
+end
