@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   resources :beliefs
   resources :distortions
   resources :lady_bugs
