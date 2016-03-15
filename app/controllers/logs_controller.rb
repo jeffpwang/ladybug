@@ -13,15 +13,6 @@ def create
  end
 end
 
-def create
-  @log = Log.new(logs_params)
-  if @log.valid?
-   @log.save
-  else
-   render 'new'
-  end
-end
-
 private
 
 def logs_params
