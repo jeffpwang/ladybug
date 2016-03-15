@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   resources :beliefs
   resources :distortions
   resources :lady_bugs
