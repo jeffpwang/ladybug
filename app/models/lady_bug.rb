@@ -11,4 +11,5 @@
 
 class LadyBug < ActiveRecord::Base
 	belongs_to :log
+	validates :content, presence: true
 end
