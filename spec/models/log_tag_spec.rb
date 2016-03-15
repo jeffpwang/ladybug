@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: log_tags
+#
+#  id         :integer          not null, primary key
+#  log_id     :integer
+#  tag_id     :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'rails_helper'
 
 RSpec.describe LogTag, type: :model do

@@ -42,6 +42,7 @@ group :development do
 end
 
 group :test, :development do
+  gem 'annotate'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -63,4 +64,3 @@ group :production do
 end
 
 gem 'bootstrap-sass', '~> 3.1.1'
-gem 'devise'
