@@ -8,8 +8,17 @@
 <%= f.text_area :content %><br>
 <%= f.label :after_rating %>
 <%= f.select :after_rating, (1..10) %><br>
+<%= f.label :belief_id %>
 <%= f.collection_select :belief_id, Belief.all, :id, :name %><br>
+<%= f.label :distortion_id %>
 <%= f.collection_select :distortion_id, Distortion.all, :id, :name %>
+<%= f.label :distortion_id %><br>
+<%= f.label :tag_id %>
+<%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
+<br>
+<%= f.label :lady_bug_id %>
+<%= f.collection_select :lady_bug_ids, LadyBug.all, :id, :content %><br>
 
+<%= link_to "add a new ladybug", new_lady_bug_path %>
 <%= f.submit %>
 <%end%>
