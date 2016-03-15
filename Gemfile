@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use SCSS for stylesheets
@@ -38,10 +37,10 @@ group :development do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
 end
 
 group :test, :development do
+  gem 'annotate'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -53,7 +52,6 @@ group :test, :development do
   gem 'sqlite3'
   gem 'pry'
   gem 'guard-rspec', require: false
-  gem 'thin'
   gem 'annotate'
 end
 
@@ -64,4 +62,3 @@ group :production do
 end
 
 gem 'bootstrap-sass', '~> 3.1.1'
-gem 'devise'
