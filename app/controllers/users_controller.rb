@@ -5,13 +5,32 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.new(user_params)
+		@user = User.create(user_params)
+	#	binding.pry
+		 if @user.save
+		 	session[:user_id] = @user.id
+			redirect_to @user
+		 else
+ 		 	render 'new'
+		 end
 	end
+
+	def show
+		@user = User.find(params[:id])
+	end
+
+	# def edit
+	# 	@user = User.find(params[:id])
+	# end
+
+	# def update
+	# end
 
 
 	private
 
 	def user_params
-		params.require(:user).permit(:email, :name)
+		params.require(:user).permit(:email, :name, :password, :password_confirmation)
 	end
+
 end
