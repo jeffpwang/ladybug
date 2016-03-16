@@ -8,14 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body>
+<body id="page-top" class="index">
 
-<div class="container">
 <%= render "freelancers/navigation" %>
 
-  <div class="container">
-  </div>
-    <%= yield %>  
+  <%= yield %>
 
 <%= render "freelancers/character" %>
 <%= render "freelancers/footer" %>
