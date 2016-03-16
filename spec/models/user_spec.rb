@@ -21,4 +21,7 @@ RSpec.describe User, type: :model do
   			expect(user.email).to eq("tommy@gmail.com")
   		end  		
  	end
+ 	describe 'validations' do
+ 		
+ 	end
 end

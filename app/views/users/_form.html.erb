@@ -1,33 +1,8 @@
 <%= simple_form_for @user do |f| %>
 
-<div class="row control-group">
-  <div class="form-group col-xs-12 floating-label-form-group controls">
-  <%= f.input :name, placeholder: 'Name', class: "form-control" %>
-  </div>
-</div>
-
-<div class="row control-group">
-  <div class="form-group col-xs-12 floating-label-form-group controls">
-  <%= f.input :email, placeholder: 'Email', class: "form-control" %> 
-  </div>
-</div>
-
-<div class="row control-group">
-  <div class="form-group col-xs-12 floating-label-form-group controls">
-  <%= f.input :password, placeholder: 'Password', class: "form-control" %>
-  </div>
-</div>
-
-
-<div class="row control-group">
-  <div class="form-group col-xs-12 floating-label-form-group controls">
-  <%= f.input :password_confirmation, placeholder: 'Retype Password', class: "form-control" %>  
-  </div>
-</div>
-
-<div class="row">
-  <div class="form-group col-xs-12">
-  <%= f.button :submit, class: "btn btn-success btn-lg"%>
-  </div>
-</div>
+  <%= f.input :name %>
+  <%= f.input :email %>  
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>  
+  <%= f.button :submit, class: "btn, btn-success" %>
 <% end %>

@@ -10,4 +10,9 @@
 
 class Belief < ActiveRecord::Base
 	has_many :logs
+
+  def ladybug_belief
+    WHERE log_id = log.belief_id
+  end
+
 end

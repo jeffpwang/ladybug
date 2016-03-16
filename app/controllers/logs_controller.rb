@@ -1,16 +1,16 @@
 class LogsController < ApplicationController
 
 def new
+
  @log = Log.new
- @ladybug = @log.lady_bugs.build
+
 end
 
 def create
- @log = Log.create(logs_params)
+ @log =  current_user.logs.build(logs_params)
  if @log.valid?
   @log.save
-
-  redirect_to @log
+  redirect_to user_path(current_user.id)
  else
   render 'new'
  end
@@ -23,7 +23,7 @@ end
 private
 
 def logs_params
- params.require(:log).permit(:content, :before_rating, :after_rating)
+ params.require(:log).permit(:content, :before_rating, :after_rating, :belief_id, :distortion_id, :lady_bug_ids, :tag_ids => [])
 end
 
 end
