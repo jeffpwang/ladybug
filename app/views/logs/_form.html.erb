@@ -1,12 +1,21 @@
-<h1>Feeling Log</h1>
-
 <%= simple_form_for @log do |f| %>
   <%= f.input :before_rating, collection: 1..10 %>
-  <%= f.input :content %>
+
+<div class="row control-group">
+  <div class="form-group col-xs-12 floating-label-form-group controls">
+  <%= f.input :content, placeholder: "What's making you feel bad?", class: "form-control"%>
+  </div>
+</div>
+
   <%= f.association :belief, as: :check_boxes %>
+
   <%= f.association :distortion, as: :check_boxes %>
+
   <%= f.association :tags, as: :check_boxes %>
-  <%= f.input :lady_bugs, collection: @ladybugs, as: :grouped_select, group_method: :content %>
+
+  <%= f.input :lady_bugs, collection: @ladybugs, as: :grouped_select, group_method: :content, label: 'Ladybug' %>
+
   <%= f.input :after_rating, collection: 1..10 %>
-  <%= f.button :submit %>
+
+  <%= f.button :submit, class: "btn btn-success btn-lg" %>
 <% end %>

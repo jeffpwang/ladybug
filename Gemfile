@@ -41,8 +41,6 @@ end
 
 group :test, :development do
 
-  gem 'simple_form'  
-  gem 'annotate'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -66,6 +64,6 @@ group :production do
 end
 
 
-gem 'bootstrap-sass', '3.2.0.0'
+gem 'bootstrap-sass', '3.1.1'
 
 
