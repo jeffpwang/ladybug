@@ -5,7 +5,8 @@ def new
 end
 
 def create
-  @ladybug = LadyBug.create(ladybug_params)
+  @ladybug = current_user.lady_bugs.build(ladybug_params)
+
   redirect_to lady_bug_path(@ladybug)
 end 
 
