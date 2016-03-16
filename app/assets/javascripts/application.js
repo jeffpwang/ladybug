@@ -13,5 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree ../../../vendor/assets/javascripts/.
-//= require_tree .
+//= require freelancer/classie
+//= require freelancer/cbpAnimatedHeader
+//= require freelancer/contact_me
+//= require freelancer/freelancer
+//= require freelancer/jqBootstrapValidation
+

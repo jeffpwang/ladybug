@@ -1,12 +1,213 @@
-<footer class="footer">
-  <small>
-    &copy; LadyBug -- Think Positive</a>
-    by Jeffrey Wang, Mallory Coppenrath, and Leah Einhorn</a>
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "About",   '#' %></li>
-      <li><%= link_to "Contact", '#' %></li>
-    </ul>
-  </nav>
+<footer class="text-center">
+    <div class="footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <h3>Location</h3>
+                    <p>11 Broadway #260<br>New York, NY 10004</p>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>Creators</h3>
+                    <p>Mallory, Leah, and Jeff are currently web development students at the Flatiron School. LadyBug is their first project and they're very excited that you're here. 
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>About LadyBug</h3>
+                    <p>Learn to have positive thoughts through recognizing your negative ones. Attach a Ladybug to each negative thought you have and become a happier person!
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; LadyBug 2016
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll visible-xs visible-sm">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+
+<!-- Portfolio Modals -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Anxious Andy</h2>
+                        <hr class="star-primary">
+                        <%= image_tag "freelancer/portfolio/ant.png", class: "img-responsive", alt: "" %>
+                        <p>Anxious Andy always fears the worst will happen. He builds his mounds out of pebbles just in case an earthquake is about to happen. </p>
+                        <ul class="list-inline item-details">
+                            <li>Thinking Error:
+                                <strong><a href="https://kidsthinkingcritically.wordpress.com/thinkingerrors/catastrophization/" target="_blank">Catastrophizing</a>
+                                </strong>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Macho Mike</h2>
+                        <hr class="star-primary">
+                        <%= image_tag "freelancer/portfolio/mosquito.png", class: "img-responsive", alt: "" %>
+                        <p>Macho Mike thinks he's always right, even when he's wrong. He thinks rules don't apply to him and this tends to get him into a lot of trouble.</p>
+                        <ul class="list-inline item-details">
+                            <li>Thinking Error:
+                                <strong><a href="https://kidsthinkingcritically.wordpress.com/thinkingerrors/should-statements/" target="_blank">Should Statements</a>
+                                </strong>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Hurtful Harry</h2>
+                        <hr class="star-primary">
+                        <%= image_tag "freelancer/portfolio/hornet.png", class: "img-responsive", alt: "" %>
+                        <p>Hurtful Harry let's his emotions get the best of him. He doesn't hesitate to sting a human who looks at him the wrong way.</p>
+                        <ul class="list-inline item-details">
+                            <li>Thinking Error:
+                                <strong><a href="https://kidsthinkingcritically.wordpress.com/thinkingerrors/emotional-reasoning/" target="_blank">Emotional Reasoning</a>
+                                </strong>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Belittling Betty</h2>
+                        <hr class="star-primary">
+                        <%= image_tag "freelancer/portfolio/beetle.png", class: "img-responsive", alt: "" %>
+                        <p>Belittling Betty has a nickname for everyone. She thinks everyone is either a "jerk" or a "loser", and sometimes calls herself a "dung-head". </p>
+                        <ul class="list-inline item-details">
+                            <li>Thinking Error:
+                                <strong><a href="https://kidsthinkingcritically.wordpress.com/thinkingerrors/labeling-and-mislabeling/" target="_blank">Labeling</a>
+                                </strong>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Critical Carl</h2>
+                        <hr class="star-primary">
+                        <%= image_tag "freelancer/portfolio/cricket.png", class: "img-responsive", alt: "" %>
+                        <p>Critical Carl blames himself for everything. When his friends ask him to play, he tells them no because he doesn't think they'll have fun with him around.</p>
+                        <ul class="list-inline item-details">
+                            <li>Thought Error:
+                                <strong><a href="https://kidsthinkingcritically.wordpress.com/thinkingerrors/jumping-to-conclusions/mind-reading/" target="_blank">Mind Reading</a>
+                                </strong>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Superstitious Sally</h2>
+                        <hr class="star-primary">
+                        <%= image_tag "freelancer/portfolio/spider.png", class: "img-responsive", alt: "" %>
+                        <p>Superstitious Sally sees every thing as a bad sign. They say her web only clings to negative thoughts and positive thoughts just fly away.</p>
+                        <ul class="list-inline item-details">
+                            <li>Thinking Error:
+                                <strong><a href="https://kidsthinkingcritically.wordpress.com/thinkingerrors/mental-filter/" target="_blank">Mental Filter</a>
+                                </strong>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
