@@ -12,5 +12,6 @@
 class LadyBug < ActiveRecord::Base
 	belongs_to :log
 	validates :content, presence: true
+  validates :content, :uniqueness => true
 
 end
