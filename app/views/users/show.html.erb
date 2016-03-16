@@ -1,3 +1,4 @@
+
 <% if current_user %>	
 	Logged in as <%= @user.name %><br />
 	<%= link_to "Log Out", logout_path, method: "delete"%>
@@ -5,3 +6,18 @@
 	<%= link_to "Sign Up", new_user_path %><br />
 	<%=link_to "Log In", login_path %>
 <% end %>
+	<h2>Log</h2>
+	<ul>
+	<% current_user.logs.each do |log| %>
+	<div>
+		<li><%= log.created_at %></li>
+		<li><%= log.content %></li>
+		<li><%= log.after_rating %></li>
+
+		<ul>
+		<% log.lady_bugs.each do |lady_bug| %>
+			<li><%= lady_bug.content %></li>
+		<% end %>
+		</ul>
+	</div>
+		<% end %>

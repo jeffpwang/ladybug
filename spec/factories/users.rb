@@ -9,7 +9,8 @@
 #
 
 FactoryGirl.define do
-  factory :user do
-    
+  factory :user do |f|
+ 	f.name "Tommy"
+	f.email "tommy@gmail.com"
   end
 end
