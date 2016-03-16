@@ -54,6 +54,9 @@ group :test, :development do
   gem 'sqlite3'
   gem 'pry'
   gem 'guard-rspec', require: false
+  gem 'annotate'
+  gem 'simple_form'
+
 end
 
 group :production do
