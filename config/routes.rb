@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :tags
   resources :users
 
+<<<<<<< HEAD
   root  'static_pages#home'
   get 'help'  => 'static_pages#help'
   get 'about'  => 'static_pages#about'
@@ -15,6 +16,11 @@ Rails.application.routes.draw do
 
   get 'login' => 'sessions#new', as: 'login' 
 
+=======
+  resources :users, only: [:new, :create, :show]
+
+  get 'login' => 'sessions#new', as: 'login'
+>>>>>>> leah
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy', as: 'logout'
     
