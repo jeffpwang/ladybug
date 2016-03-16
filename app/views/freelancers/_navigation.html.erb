@@ -22,8 +22,12 @@
         <li class="<% yield(:ladybugs) %>"><%= link_to "New Ladybug", new_lady_bug_path %></li>
           
         <li> 
-            <button class="nav navbar-nav navbar-right" type="button" data-toggle="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            <% if current_user %>
              <%= current_user.name %><span class="caret"></span></button>
+            <% else %>
+              Account<span class="caret"></span></button>
+            <% end %>
             <ul class="dropdown-menu">
               <% if current_user %> 
               <li><%= link_to "Logs", user_path(current_user.id)%></li>
