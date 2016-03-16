@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   get 'about'  => 'pages#about'
 
 
-
-  get 'login' => 'sessions#new', as: 'login' 
-
+  get 'login' => 'sessions#new', as: 'login'
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy', as: 'logout'
     

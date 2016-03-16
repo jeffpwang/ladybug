@@ -19,7 +19,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -40,6 +40,9 @@ group :development do
 end
 
 group :test, :development do
+
+  gem 'simple_form'  
+  gem 'annotate'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -51,7 +54,6 @@ group :test, :development do
   gem 'sqlite3'
   gem 'pry'
   gem 'guard-rspec', require: false
-  gem 'annotate'
 end
 
 group :production do
@@ -59,5 +61,8 @@ group :production do
   gem 'google-analytics-rails'
   gem 'rails_12factor'
 end
-gem 'frontend-generators'
+
+
 gem 'bootstrap-sass', '3.2.0.0'
+
+

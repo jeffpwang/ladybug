@@ -7,11 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 
+<body>
+
+
 <%= render "freelancers/navigation" %>
-<%= yield %>
+  <div class="container">
+  <%= yield %>
+  </div>
 <%= render "freelancers/character" %>
 <%= render "freelancers/footer" %>
-
 
 
 </body>

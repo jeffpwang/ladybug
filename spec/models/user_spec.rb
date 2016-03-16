@@ -2,9 +2,10 @@
 #
 # Table name: users
 #
-#  id    :integer          not null, primary key
-#  name  :string
-#  email :string
+#  id              :integer          not null, primary key
+#  name            :string
+#  email           :string
+#  password_digest :string
 #
 
 require 'rails_helper'
