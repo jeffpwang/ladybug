@@ -1,3 +1,4 @@
 <%= simple_form_for @ladybug do |f| %>
-   <%= f.input :content,:collection => @logs,:label_method => :lady_bug_content,:value_method => :id,:label => "Ladybug" ,:include_blank => false %>
-<%end%>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
