@@ -10,7 +10,7 @@ def create
  @log =  current_user.logs.build(logs_params)
  if @log.valid?
   @log.save
-  redirect_to @log
+  redirect_to user_path(current_user.id)
  else
   render 'new'
  end
