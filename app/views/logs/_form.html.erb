@@ -7,16 +7,12 @@
   </div>
 </div>
 
-  <%= f.association :belief, as: :check_boxes %>
-
-  <%= f.association :distortion, as: :check_boxes %>
-
-  <%= f.association :tags, as: :check_boxes %>
-
-  <%= f.input :lady_bugs, collection: @ladybugs, as: :grouped_select, group_method: :content, label: 'Ladybug' %>
+  <%= f.association :belief, as: :radio_buttons,  item_label_class: "radio-inline", item_wrapper_tag: false%>
+  <%= f.association :distortion, as: :radio_buttons, item_label_class: "radio-inline", item_wrapper_tag: false %>
+  <%= f.association :tags, as: :check_boxes, item_label_class: "radio-inline", item_wrapper_tag: false %>
+  <%= f.association :lady_bugs, label_method: :content %>
 
   <%= f.input :after_rating, collection: 1..10 %>
 
   <%= f.button :submit, class: "btn btn-success btn-lg" %>
 <% end %>
-
