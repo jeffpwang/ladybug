@@ -2,16 +2,27 @@
 <html>
 <head>
   <title>Ladybug</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= analytics_init if Rails.env.production? %>
 </head>
+
 <body>
 
+<<<<<<< HEAD
 <div class="container">
 <%= yield %>
 </div>
+=======
+
+<%= render "freelancers/navigation" %>
+  <div class="container">
+  <%= yield %>
+  </div>
+<%= render "freelancers/character" %>
+<%= render "freelancers/footer" %>
+
+>>>>>>> 5420074aac89e9f9fab6dd5355c7fecec2036286
 
 </body>
 </html>

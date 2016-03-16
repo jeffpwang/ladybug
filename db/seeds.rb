@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-tommy = User.create(email: "tommy@yahoo.com")
-angelica = User.create(email: "angelica@yahoo.com")
-chuckie = User.create(email: "chuckie@yahoo.com")
+tommy = User.create(email: "tommy@yahoo.com", name: "Tommy")
+angelica = User.create(email: "angelica@yahoo.com", name: "Angelica")
+chuckie = User.create(email: "chuckie@yahoo.com", name: "Chuckie")
 
 all_or_nothing = Distortion.create(name: "All or nothing")
 should = Distortion.create(name: "Shoulds")
@@ -42,5 +42,4 @@ tommy.save
 angelica.save
 chuckie.save
 
-#hello
 

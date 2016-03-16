@@ -19,7 +19,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -40,6 +40,8 @@ group :development do
 end
 
 group :test, :development do
+
+  gem 'simple_form'  
   gem 'annotate'
   gem 'rspec-rails'
   gem 'capybara'
@@ -54,6 +56,7 @@ group :test, :development do
   gem 'guard-rspec', require: false
   gem 'annotate'
   gem 'simple_form'
+
 end
 
 group :production do
@@ -62,4 +65,7 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'bootstrap-sass', '~> 3.1.1'
+
+gem 'bootstrap-sass', '3.2.0.0'
+
+
