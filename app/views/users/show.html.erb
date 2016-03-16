@@ -13,7 +13,9 @@
 		<li><%= log.created_at %></li>
 		<li><%= log.content %></li>
 		<li><%= log.after_rating %></li>
-
+		<% log.tags.each do |tag|%>
+			<%= tag.name %>
+		<% end %>
 		<ul>
 		<% log.lady_bugs.each do |lady_bug| %>
 			<li><%= lady_bug.content %></li>
