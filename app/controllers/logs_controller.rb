@@ -2,6 +2,7 @@ class LogsController < ApplicationController
 
 def new
  @log = Log.new
+ @ladybug = @log.lady_bugs.build
 end
 
 def create
