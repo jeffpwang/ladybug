@@ -20,6 +20,11 @@ class User < ActiveRecord::Base
      validates :name, presence: true, uniqueness: true
      validates :email, presence: true, uniqueness: true
 
-
+     def average_after_mood
+     	self.logs.average(:after_rating)
+     end
      
+     def average_before_mood
+     	self.logs.average(:before_rating)
+     end
 end

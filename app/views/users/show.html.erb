@@ -4,6 +4,12 @@
 <div class="container">
 	<h2>Your logs</h2>
 
+
+	 <div class="container">
+		<h2>Your logs</h2>
+		<h3>Average Mood:</h3>
+		<h4>Before: <%= current_user.average_before_mood %></h4>
+		<h4>After: <%= current_user.average_after_mood %></h4>
 		<ul>
 		<% current_user.logs.each do |log| %>
 		<div>
