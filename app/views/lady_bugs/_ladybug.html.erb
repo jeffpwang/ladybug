@@ -1,0 +1,8 @@
+<%= simple_form_for @ladybug do |f| %>
+  <div class="row control-group">
+    <div class="form-group col-xs-12 floating-label-form-group controls">
+    <%= f.input :content, placeholder: "What's makes you happy?", class: "form-control"%>
+    </div>
+  </div>
+  <%= f.button :submit, "Save Your Ladybug", class: "btn btn-success btn-lg"%>
+<% end %>
