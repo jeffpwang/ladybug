@@ -41,8 +41,6 @@ end
 
 group :test, :development do
 
-  gem 'simple_form'  
-  gem 'annotate'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'

@@ -1,8 +1,9 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <%= link_to "LadyBug", root_path, id: "logo" %>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <%= link_to "LadyBug", root_path, id: "logo" %>
+
       <ul class="nav navbar-nav navbar-right">
         <li class="<% yield(:home) %>"><%= link_to "Home", root_path %></li>
         <li class="<% yield(:about) %>"><%= link_to "About", about_path %></li>
@@ -17,7 +18,11 @@
               <li><%= link_to "Profile", "#" %></li>
               <li><%= link_to "Settings", "#" %></li>
               <li class="divider"></li>
-              <li><%= link_to "Log out", "#", method: "delete" %></li>
+              <% if current_user %> 
+              <li><%= link_to "Log Out", logout_path, method: "delete"%></li>
+              <% else %>
+                <li><%=link_to "Log In", login_path %></li>
+              <% end %>
             </ul>
         </li>
 

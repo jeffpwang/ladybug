@@ -10,6 +10,7 @@ def create
  @log =  current_user.logs.build(logs_params)
  if @log.valid?
   @log.save
+  binding.pry
   redirect_to @log
  else
   render 'new'
