@@ -40,7 +40,6 @@ group :development do
 end
 
 group :test, :development do
-  gem 'annotate'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -60,5 +59,5 @@ group :production do
   gem 'google-analytics-rails'
   gem 'rails_12factor'
 end
-
+gem 'frontend-generators'
 gem 'bootstrap-sass', '3.2.0.0'
