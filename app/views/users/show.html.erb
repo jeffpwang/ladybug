@@ -2,6 +2,29 @@
 <% provide(:about, "active") %>
 <% provide(:title, "User Log") %>
 
+<<<<<<< HEAD
+=======
+<div class="container">
+
+		<h2>Your logs</h2>
+		<h3>Average Mood:</h3>
+		<h4>Before: <%= current_user.average_before_mood %></h4>
+		<h4>After: <%= current_user.average_after_mood %></h4>
+		<h4>Your most popular tags: <%= current_user.popular_tags.keys.first %></h4>
+		<h4>Your most popular distortions: <%= current_user.popular_distortions.keys.first %></h4>
+		<h4>Active Day: <%= current_user.saddest_day.keys.first %></h4>
+		<ul>
+		<% current_user.logs.each do |log| %>
+		<div>
+		<br>
+		
+		<%= log.created_at.strftime("%B %d, %Y / %I:%m%p")%><br>
+		<b>negative thought:</b> <%= log.content %></li><br>
+		<b>when you started this session your mood was at a:</b> <%= log.before_rating %><br>
+		<b>when you completed this session your mood was at a:</b> <%= log.after_rating %><br>
+		<% log.tags.each do |tag| %>
+		<b>tags:</b> <%= tag.name %><br>
+>>>>>>> mallory
 
 <div class="container">
   <div class="row">
