@@ -25,6 +25,13 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	end
 
+	def delete
+		@user = User.find(current_user[:id])
+		@user.destroy
+		@user.cleanup
+		# redirect_to 
+	end
+
 	# def edit
 	# 	@user = User.find(params[:id])
 	# end
