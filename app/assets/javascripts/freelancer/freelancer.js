@@ -35,3 +35,32 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+$(document).ready(function(){
+  updateRangeValue($('input[type=range]'));
+  $('input[type=range]').on('input change',function(){
+    var input = $(this);
+    updateRangeValue(input);
+  });    
+});
+function getRangeGradient(color1,color2,value,maximum,color3){
+  var gradient = "linear-gradient(to right, ";
+  var breakPoint = (value/maximum)*100;
+  var attrValue = gradient + color3 + " 0%, " + color1 + " " + breakPoint + "%, " + color2 + " " + breakPoint + "%, " + color2 + " 100%)";
+  return attrValue;
+}
+function updateRangeValue(input){
+  var badColor = "#7D6608"
+  var selectedColor = "#F5B041";
+  var nonSelectedColor = "#ddd";
+  var value = input.val();
+  var maximum = input.attr('max'); 
+  var inputWidth = input.width();
+  var background = getRangeGradient(selectedColor, nonSelectedColor, value, maximum, badColor);
+  var offLeft = Math.floor((value / maximum) * inputWidth - (((value / maximum) * inputWidth - inputWidth/2) / 100) * 24);    
+  var offLeftAbs = value == maximum ? input.offset().left - 15 + offLeft : input.offset().left - 10 + offLeft;
+  input.next('.text').css({'left': offLeftAbs +'px'});
+  input.next('.text').html(value);
+  input.css('background', background); 
+}
+
