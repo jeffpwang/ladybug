@@ -1,18 +1,26 @@
 <%= simple_form_for @log do |f| %>
   <%= f.input :before_rating, collection: 1..10 %>
 
-<div class="row control-group">
-  <div class="form-group col-xs-12 floating-label-form-group controls">
-  <%= f.input :content, placeholder: "What's making you feel bad?", class: "form-control"%>
+  <div class="row control-group">
+    <div class="form-group col-xs-12 floating-label-form-group controls">
+    <%= f.input :content, placeholder: "What's making you feel bad?", class: "form-control"%>
+    </div>
   </div>
-</div>
 
-  <%= f.association :belief, as: :radio_buttons,  item_label_class: "radio-inline", item_wrapper_tag: false%>
   <%= f.association :distortion, as: :radio_buttons, item_label_class: "radio-inline", item_wrapper_tag: false %>
+
   <%= f.association :tags, as: :check_boxes, item_label_class: "radio-inline", item_wrapper_tag: false %>
+
+  <div class="row control-group">
+    <div class="form-group col-xs-12 floating-label-form-group controls">
+    <%= f.input :tag_new, placeholder: "New Tags (ex. #love #drama #summer2015)"%>
+    </div>
+  </div>
+
   <%= f.association :lady_bugs, label_method: :content %>
 
   <%= f.input :after_rating, collection: 1..10 %>
 
   <%= f.button :submit, class: "btn btn-success btn-lg" %>
+
 <% end %>

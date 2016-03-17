@@ -13,4 +13,7 @@ class Tag < ActiveRecord::Base
 	has_many :logs, through: :logtags
 
   validates :name, :uniqueness => true
+
+  def tag_new
+  end 
 end
