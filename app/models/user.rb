@@ -71,7 +71,7 @@ class User < ActiveRecord::Base
      end 
 
      def average_overall
-          each_rating_average.sum / self.logs.count
+          each_rating_average.sum / self.logs.count unless self.logs.count == 0 
      end 
 
      def recent_logs
@@ -79,12 +79,15 @@ class User < ActiveRecord::Base
      end 
 
      def recent_ratings
+          each_rating_average.last(5)
      end 
 
      def recent_logs_with_ratings
          date_array = recent_logs.pluck(:created_at).map do |date|
-          date.strftime("%A %b, %e | %I:%M %p ") 
+          date.strftime("%b %d, %Y")
          end 
+
+         date_array.last(5).zip(recent_ratings)
      end 
 
 end
