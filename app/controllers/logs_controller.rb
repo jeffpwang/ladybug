@@ -7,8 +7,6 @@ def new
 end
 
 def create
- binding.pry
-
  @log =  current_user.logs.build(logs_params)
  if @log.valid?
   @log.save
