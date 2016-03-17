@@ -29,4 +29,17 @@ class Log < ActiveRecord::Base
 	validates :content, presence: true
 	validates :before_rating, presence: true, :inclusion => 1..10
 	validates :after_rating, presence: true, :inclusion => 1..10
+	
+	attr_reader :tag_new
+
+	def tag_new=(string)
+		arr_tags = string.split(/[\s, #]/).reject { |c| c.empty? }
+		arr_tags.each do |tag|
+			@tag = Tag.find_or_create_by(name: tag)
+			unless self.tags.include?(@tag)
+				self.tags << @tag
+			end 
+		end 
+		self.save
+	end 
 end
