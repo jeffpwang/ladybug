@@ -1,0 +1,34 @@
+ <h3>Average Mood:</h3>
+  <div class="row">
+     <div class="col-lg-4 text-left">
+        <h4>Before: <%= current_user.average_before_mood %></h4>
+        <h4>After: <%= current_user.average_after_mood %></h4>
+        <h4>Overall: <%= current_user.average_overall %></h4>
+            <%= pie_chart({"Before" => current_user.average_before_mood, "After" => current_user.average_after_mood}, colors: ["black", "red"]) %>
+    </div>
+
+    <div class="col-lg-8 text-right">
+        <% binding.pry %>
+        <%= line_chart current_user.recent_logs_with_ratings%>
+    </div>
+  </div>
+
+    <% current_user.logs.each do |log| %>
+    <hr>
+    <p><%= log.created_at.strftime("%A, %d %b %Y")%></p>
+    <hr>
+
+    <h4>Log:</h4> <p><i><%= log.content %></i></p><br>
+
+    <%= bar_chart "Overall" => current_user.average_overall, "Before" => log.before_rating, "After" => log.after_rating %>
+    
+    <h4>Tags:</h4>
+    <% log.tags.uniq.each do |tag| %>
+         #<%= tag.name %>
+    <% end %>
+
+    <% log.lady_bugs.each do |lady_bug| %>
+        <%= lady_bug.content %>
+    <% end %>
+
+<% end %>
