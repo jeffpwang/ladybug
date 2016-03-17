@@ -42,4 +42,5 @@ class Log < ActiveRecord::Base
 		end 
 		self.save
 	end 
+
 end

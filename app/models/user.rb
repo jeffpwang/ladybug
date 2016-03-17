@@ -29,14 +29,27 @@ class User < ActiveRecord::Base
      	self.logs.average(:before_rating)
      end
 
+     def popular_tags
+          self.tags.group('tags.name').order('count_id desc').limit(1).count('id')
+     end
+
+     def popular_distortions
+          self.distortions.group('distortions.name').order('count_id desc').limit(1).count('id')
+     end
+
+#group by day (created_at) get the average rating for each day
+#return day with highest + lowest rating
+
+     def saddest_day
+          self.logs.group('logs.created_at').order('count_id').limit(1).count('id')
+     end   
+
      private
      
      def cleanup
-          self.tags.destroy_all
-          self.ladybugs.destroy_all
-          self.distortions.destroy_all
-          self.before_rating.destroy_all
-          self.after_rating.destroy_all
+          self.tags.destroy
+          self.lady_bugs.destroy
+          self.distortions.destroy
      end
 
 end
