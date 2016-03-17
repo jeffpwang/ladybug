@@ -1,0 +1,24 @@
+ <h3>Statistics:</h3>
+
+  <div class="row">
+     <div class="col-lg-4 text-left">
+        <h4>Your most popular tag: <%= current_user.popular_tags.keys.first %></h4>
+        <%= pie_chart(current_user.top_five_tags, colors: ["brown", "grey", "gold", "silver", "beige"]) %>
+    </div>
+     <div class="col-lg-4 text-center">
+        <h4>Your most popular distortion: <%= current_user.popular_distortions.keys.first %></h4>
+        <%= pie_chart(current_user.all_distortions, colors: ["turquoise", "blue", "yellow", "orange", "green", "purple"]) %>
+    </div>
+    <div class="col-lg-4 text-right">
+        <h4>Overall Mood: <%= current_user.average_overall %></h4>
+        <%= pie_chart({"Before" => current_user.average_before_mood, "After" => current_user.average_after_mood}, colors: ["black", "red"]) %>
+    </div>
+ </div>
+
+ <div class="row">
+
+    <div class="col-lg-12 text-center">
+
+        <%= line_chart current_user.recent_logs_with_ratings, colors: ["#F30000"], label: "Mood", xtitle: "Time", ytitle: "Mood", library: {backgroundColor: "#FFF99D"} %>
+    </div>
+ </div>

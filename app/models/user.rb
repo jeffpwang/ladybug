@@ -84,7 +84,7 @@ class User < ActiveRecord::Base
 
      def recent_logs_with_ratings
          date_array = recent_logs.pluck(:created_at).map do |date|
-          date.strftime("%b %d, %Y")
+          date
          end 
 
          date_array.last(5).zip(recent_ratings)
