@@ -4,6 +4,12 @@
 <div class="container">
 
 		<h2>Your logs</h2>
+  <% if flash[:notice] %>
+    <div class="alert alert-success">
+  		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <%= flash[:notice] %></div>
+
+  	<% end %>		
 		<h3>Average Mood:</h3>
 		<h4>Before: <%= current_user.average_before_mood %></h4>
 		<h4>After: <%= current_user.average_after_mood %></h4>
