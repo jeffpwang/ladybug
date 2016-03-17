@@ -22,14 +22,12 @@ class User < ActiveRecord::Base
      validates :email, presence: true, uniqueness: true
 
      def average_after_mood
-     	self.logs.average(:after_rating)
+     	self.logs.average(:after_rating).to_i
      end
      
      def average_before_mood
-     	self.logs.average(:before_rating)
+     	self.logs.average(:before_rating).to_i
      end
-
-     private
      
      def cleanup
           self.tags.destroy_all
@@ -38,5 +36,34 @@ class User < ActiveRecord::Base
           self.before_rating.destroy_all
           self.after_rating.destroy_all
      end
+
+     def pair_of_ratings
+          self.logs.pluck(:before_rating, :after_rating)
+     end 
+
+     def each_rating_average
+          pair_of_ratings.map do |x, y| 
+               (x + y) / 2.0
+          end 
+     end 
+
+     def average_overall
+          each_rating_average.sum / self.logs.count
+     end 
+
+     def recent_logs
+         Log.all.where(created_at: 5.days.ago..Time.now).where(user_id: self.id)
+     end 
+
+     def recent_ratings
+     end 
+
+     def recent_logs_with_ratings
+         date_array = recent_logs.pluck(:created_at).map do |date|
+          date.strftime("%A %b, %e | %I:%M %p ") 
+         end 
+     end 
+
+>>>>>>> jeff
 
 end
