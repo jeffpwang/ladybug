@@ -1,5 +1,10 @@
 <%= simple_form_for @log do |f| %>
-  <%= f.input :before_rating, collection: 1..10 %>
+
+  <div class="range-wrapper">
+    <input type="range" min="0" max="10" name="log[before_rating]" id="log_before_rating">
+    <div class="text">1</div>
+  </div>
+
 
   <div class="row control-group">
     <div class="form-group col-xs-12 floating-label-form-group controls">
@@ -19,7 +24,10 @@
 
   <%= f.association :lady_bugs, label_method: :content %>
 
-  <%= f.input :after_rating, collection: 1..10 %>
+  <div class="range-wrapper">
+    <input type="range" min="0" max="10" name="log[after_rating]" id="log_after_rating">
+    <div class="text">1</div>
+  </div>
 
   <%= f.button :submit, class: "btn btn-success btn-lg" %>
 

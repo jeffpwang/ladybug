@@ -67,5 +67,6 @@ end
 
 
 gem 'bootstrap-sass', '3.1.1'
+gem 'bootstrap-slider-rails'
 
 
