@@ -1,36 +1,42 @@
 class LadyBugsController < ApplicationController
 
-def new
-  @ladybug = LadyBug.new
-end
+  def new
+    @ladybug = LadyBug.new
+  end
 
-def create
-  @ladybug = current_user.lady_bugs.build(ladybug_params)
+  def create
+    @ladybug = current_user.lady_bugs.build(ladybug_params)
+    if @ladybug.save
+    redirect_to @ladybug
+    else
+      render :new
+    end
+  end 
 
-  redirect_to lady_bug_path(@ladybug)
-end 
+  def edit
+    @ladybug = LadyBug.find(params[:id])
+  end 
 
-def edit
-  @ladybug = LadyBug.find(params[:id])
-end 
+  def update
+    @ladybug = LadyBug.find(params[:id])
+    @ladybug.update(ladybug_params)
+    @ladybug.save
 
-def update
-  @ladybug = LadyBug.find(params[:id])
-  @ladybug.update(ladybug_params)
-  @ladybug.save
+    redirect_to lady_bug_path(@ladybug)
+  end 
 
-  redirect_to lady_bug_path(@ladybug)
-end 
+  def index
+    @ladybugs = current_user.ladybugs
+  end
 
-def index
-  @ladybugs = LadyBug.all
-end
+  def show
+    @ladybug = LadyBug.find(params[:id])
+  end
 
+  private
 
-private
-
-def ladybug_params
-  params.require(:lady_bug).permit(:content)
-end 
+  def ladybug_params
+    params.require(:lady_bug).permit(:content)
+  end 
 
 end
