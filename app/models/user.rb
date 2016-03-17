@@ -64,6 +64,4 @@ class User < ActiveRecord::Base
          end 
      end 
 
->>>>>>> jeff
-
 end
