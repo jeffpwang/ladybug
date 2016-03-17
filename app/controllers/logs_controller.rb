@@ -12,6 +12,8 @@ def create
  if @log.valid?
   @log.save
   redirect_to user_path(current_user.id)
+  # flash[:notice] = "Success! Log successfully created."
+
  else
   render 'new'
  end

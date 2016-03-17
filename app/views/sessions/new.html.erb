@@ -13,7 +13,12 @@
     <div class="col-lg-8 col-lg-offset-2">
 
     <%= form_tag sessions_path do %>
+  <% if flash[:alert] %>
+    <div class="alert alert-warning">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 
+    <%= flash[:alert] %></div>
+  <% end %>
       <div class="row control-group">
         <div class="form-group col-xs-12 floating-label-form-group controls">
         <%= text_field_tag(:name, nil, placeholder: "Name", :class => "form-control") %>

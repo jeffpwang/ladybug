@@ -56,6 +56,7 @@ group :test, :development do
   gem 'guard-rspec', require: false
   gem 'annotate'
   gem 'simple_form'
+  gem 'rack_session_access'
 
 end
 

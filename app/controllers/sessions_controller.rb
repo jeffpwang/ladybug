@@ -12,6 +12,8 @@ class SessionsController <  ApplicationController
 			redirect_to @user
 		else
 			render 'new'
+			flash.alert = "You username or password is invalid"
+
 		end
 	end
 
