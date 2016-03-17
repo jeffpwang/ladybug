@@ -34,15 +34,23 @@ class User < ActiveRecord::Base
           self.tags.group('tags.name').order('count_id desc').limit(1).count('id')
      end
 
+     def top_five_tags
+          self.tags.group('tags.name').order('count_id desc').limit(5).count('id')
+     end
+
      def popular_distortions
           self.distortions.group('distortions.name').order('count_id desc').limit(1).count('id')
+     end
+
+     def all_distortions
+          self.distortions.group('distortions.name').order('count_id desc').count('id')
      end
 
 #group by day (created_at) get the average rating for each day
 #return day with highest + lowest rating
 
      def saddest_day
-          self.logs.group('logs.created_at').order('count_id').limit(1).count('id')
+          self.logs.group('logs.created_at.strftime').order('count_id').limit(1).count('id')
      end   
 
      

@@ -1,6 +1,10 @@
  <h3>Average Mood:</h3>
   <div class="row">
      <div class="col-lg-4 text-left">
+        <h4>Your most popular tags: <%= current_user.popular_tags.keys.first %></h4>
+        <%= pie_chart(current_user.top_five_tags, colors: ["brown", "grey", "gold", "silver", "beige"]) %>
+        <h4>Your most popular distortions: <%= current_user.popular_distortions.keys.first %></h4>
+        <%= pie_chart(current_user.all_distortions, colors: ["turquoise", "blue", "yellow", "orange", "green", "purple"]) %>
         <h4>Before: <%= current_user.average_before_mood %></h4>
         <h4>After: <%= current_user.average_after_mood %></h4>
         <h4>Overall: <%= current_user.average_overall %></h4>
@@ -8,7 +12,6 @@
     </div>
 
     <div class="col-lg-8 text-right">
-        <% binding.pry %>
         <%= line_chart current_user.recent_logs_with_ratings%>
     </div>
   </div>
