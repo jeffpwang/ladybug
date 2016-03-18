@@ -56,7 +56,7 @@
     <p class="post-meta">
         Tags:
     <% log.tags.uniq.each do |tag| %>
-          <a class="post-category post-category-design" href="#"><%= tag.name %></a>
+          <a class="post-category post-category-design" href="<%=tag_path(tag.id) %>"><%= tag.name %></a>
     <% end %>
     </p>
     </header>

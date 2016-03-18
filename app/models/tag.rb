@@ -9,11 +9,17 @@
 #
 
 class Tag < ActiveRecord::Base
-	has_many :logtags
-	has_many :logs, through: :logtags
+	has_many :log_tags
+	has_many :logs, through: :log_tags
 
-  validates :name, :uniqueness => true
+  	validates :name, :uniqueness => true
 
-  def tag_new
-  end 
+	def find_logs_for_tag(user_id)  
+		self.logs.where("user_id" => user_id)
+	end 
+
+	#get all of the logs
+	#for a user
+	#for a tag
+
 end

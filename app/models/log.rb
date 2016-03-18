@@ -32,6 +32,8 @@ class Log < ActiveRecord::Base
 	
 	attr_reader :tag_new
 
+
+
 	def tag_new=(string)
 		arr_tags = string.split(/[\s, #]/).reject { |c| c.empty? }
 		arr_tags.each do |tag|
