@@ -45,20 +45,7 @@ RSpec.describe User, type: :model do
     end  
  end
 
-
-	describe "#destory dependent?" do
-		# context "when a user is destroyed"    
-		# let (:user) do			
-		# 	FactoryGirl.create(:user)
-		#   user.logs.create(attributes_for(:log))
-		#   user.logs.create(attributes_for(:log))
-		# end
-		# it 'destroys all the logs'
-		# 	expect(user.name).to eq("Tommy")
-		# 	binding.pry
-		 end
-
-  describe "#average_after_mood" do 
+describe "#average_after_mood" do 
     context 'return average mood for after logs' do 
       it 'shows the average after rating mood for user' do
         expect(@angel.average_after_mood).to eq(9)
