@@ -39,6 +39,7 @@ class Log < ActiveRecord::Base
 		arr_tags.each do |tag|
 			@tag = Tag.find_or_create_by(name: tag)
 			unless self.tags.include?(@tag)
+				binding.pry
 				self.tags << @tag
 			end 
 		end 
