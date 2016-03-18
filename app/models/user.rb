@@ -46,9 +46,6 @@ class User < ActiveRecord::Base
           self.distortions.group('distortions.name').order('count_id desc').count('id')
      end
 
-#group by day (created_at) get the average rating for each day
-#return day with highest + lowest rating
-
      def saddest_day
           pair_of_ratings_with_dates.each do |before, after, date| 
                lowest_avg = 0 
