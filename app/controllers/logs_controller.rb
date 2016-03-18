@@ -19,7 +19,6 @@ end
 
 def show
   @log = Log.find(params[:id])
-  @logs = Log.paginate(:page => params[:page], :per_page => 2)
 end
 
 private
