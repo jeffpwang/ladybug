@@ -1,21 +1,70 @@
-<%= render "statistics" %>
+<div class="posts">
+   <h1 class="content-subhead">Log Entries</h1>
 
     <% current_user.logs.each do |log| %>
-    <hr>
-    <p><%= log.created_at.strftime("%A, %d %b %Y")%></p>
-    <hr>
+    <section class="post">
+      <header class="post-header">
+        <% if !log.distortion.nil? %>
+        <% if log.distortion.name == "Macho Mike" %>
+            <div class="imgWrap">
+            <%= image_tag "mosquito_thumb.png", size: "100x75", class: "post-avatar" %>
+            <p class="imgDescription">Macho Mike</p>
+            </div>
+        <% elsif log.distortion.name == "Belittling Betty" %>
+            <div class="imgWrap">
+            <%= image_tag "beetle_thumb.png", size: "100x75", class: "post-avatar" %>
+            <p class="imgDescription">Belittling Betty</p>
+            </div>
+        <% elsif log.distortion.name == "Anxious Andy" %>
+            <div class="imgWrap">
+            <%= image_tag "ant_thumb.png", size: "100x75", class: "post-avatar" %>
+            <p class="imgDescription">Anxious Andy</p>
+            </div>
+        <% elsif log.distortion.name == "Hurtful Harry" %>
+            <div class="imgWrap">
+            <%= image_tag "hornet_thumb.png", size: "100x75", class: "post-avatar" %>
+            <p class="imgDescription">Hurtful Harry</p>
+            </div>
+        <% elsif log.distortion.name == "Superstitious Sally" %>
+            <div class="imgWrap">
+            <%= image_tag "spider_thumb.png", size: "100x75", class: "post-avatar" %>
+            <p class="imgDescription">Superstitious Sally</p>
+            </div>
+        <% elsif log.distortion.name == "Critical Carl" %>
+            <div class="imgWrap">
+            <%= image_tag "cricket_thumb.png", size: "100x75", class: "post-avatar" %>
+            <p class="imgDescription">Critical Carl</p>
+            </div>
+        <% else %>
+            <div class="imgWrap">
+            <%= image_tag "thumb.png", size: "48x48", class: "post-avatar" %>
+            </div>
+        <% end %>
+        <% end %>
 
-    <h4>Log:</h4> <p><i><%= log.content %></i></p><br>
+    <h2 class="post-title"><%= log.created_at.strftime("%A, %d %b %Y")%></h2>
+    
+        <div class="post-description">
+          <p>
+            <%= log.content %>
+          </p>
+        </div>
+    </section>
 
     <%= bar_chart "Overall" => current_user.average_overall, "Before" => log.before_rating, "After" => log.after_rating %>
     
-    <h4>Tags:</h4>
+    <p class="post-meta">
+        Tags:
     <% log.tags.uniq.each do |tag| %>
-         #<%= tag.name %>
+          <a class="post-category post-category-design" href="#"><%= tag.name %></a>
     <% end %>
+    </p>
+    </header>
 
     <% log.lady_bugs.each do |lady_bug| %>
         <%= lady_bug.content %>
     <% end %>
 
-<% end %>
+    <% end %>
+
+</div>

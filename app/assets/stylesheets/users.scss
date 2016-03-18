@@ -97,9 +97,9 @@ h3 {
     padding-bottom: 2em;
 }
 .post-title {
-    font-size: 2em;
+    font-size: 2.5em;
     color: #222;
-    margin-bottom: 0.2em;
+    margin-bottom: 1em;
 }
 .post-avatar {
     border-radius: 50px;
@@ -107,13 +107,13 @@ h3 {
     margin-left: 1em;
 }
 .post-description {
-    font-family: Georgia, "Cambria", serif;
-    color: #444;
-    line-height: 1.8em;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: white;
+    line-height: 3em;
 }
 .post-meta {
     color: #999;
-    font-size: 90%;
+    font-size: 140%;
     margin: 0;
 }
 
@@ -162,7 +162,7 @@ h3 {
 
 @media (min-width: 48em) {
     .content {
-        padding: 2em 3em 0;
+        padding: 2em 8em 0;
         margin-left: 25%;
     }
 
@@ -176,5 +176,39 @@ h3 {
         top: 0;
         bottom: 0;
     }
+}
+
+body {
+  font: 14px/1.4 arial;
+}
+
+.imgWrap {
+  position: relative;
+  height: 2px;
+  width: 50px;
+}
+
+.imgDescription {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(29, 106, 154, 0.72);
+  color: #F1F0EA;
+
+
+  visibility: hidden;
+  opacity: 0;
+
+  /*remove comment if you want a gradual transition between states
+  -webkit-transition: visibility opacity 0.2s;
+  */
+}
+
+
+.imgWrap:hover .imgDescription {
+  visibility: visible;
+  opacity: 1;
 }
 
