@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
      has_many :tags, through: :logs
      after_destroy :cleanup
 
-     
 	has_secure_password
      validates :name, presence: true, uniqueness: true
      validates :email, presence: true, uniqueness: true
@@ -28,7 +27,6 @@ class User < ActiveRecord::Base
      def average_before_mood
      	self.logs.average(:before_rating).to_i
      end
-
 
      def popular_tags
           self.tags.group('tags.name').order('count_id desc').limit(1).count('id')
@@ -52,7 +50,6 @@ class User < ActiveRecord::Base
      def saddest_day
           self.logs.group('logs.created_at.strftime').order('count_id').limit(1).count('id')
      end   
-
      
      def cleanup
           self.tags.destroy

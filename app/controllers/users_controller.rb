@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@logs = Log.paginate(:per_page => 2, :page => params[:page])
 	end
 
 	def delete
