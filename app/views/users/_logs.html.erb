@@ -1,7 +1,7 @@
 <div class="posts">
    <h1 class="content-subhead">Log Entries</h1>
 
-    <% current_user.logs.each do |log| %>
+    <% @logs.each do |log| %>
     <section class="post">
       <header class="post-header">
         <% if !log.distortion.nil? %>
@@ -68,3 +68,5 @@
     <% end %>
 
 </div>
+
+<%= will_paginate @logs %>
