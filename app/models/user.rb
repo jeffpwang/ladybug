@@ -48,13 +48,24 @@ class User < ActiveRecord::Base
 #return day with highest + lowest rating
 
      def saddest_day
-          self.logs.group('logs.created_at.strftime').order('count_id').limit(1).count('id')
+          pair_of_ratings_with_dates.each do |before, after, date| 
+               lowest_avg = 0 
+               lowest_date = ''
+               avg = ((before + after) / 2)
+               if avg < lowest_avg || lowest_avg == 0 
+                 lowest = avg
+                 lowest_date = date
+               end 
+               return lowest_date
+          end 
      end   
      
-     def cleanup
-          self.tags.destroy
-          self.lady_bugs.destroy
-          self.distortions.destroy
+     def cleanup_logs
+          self.logs.clear
+     end
+
+     def pair_of_ratings_with_dates
+          self.logs.pluck(:before_rating, :after_rating, :created_at)
      end
 
      def pair_of_ratings
@@ -83,7 +94,6 @@ class User < ActiveRecord::Base
          date_array = recent_logs.pluck(:created_at).map do |date|
           date
          end 
-
          date_array.last(5).zip(recent_ratings)
      end 
 

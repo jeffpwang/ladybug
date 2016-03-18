@@ -13,3 +13,4 @@ FactoryGirl.define do
     name "MyString"
   end
 end
+
