@@ -49,6 +49,35 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  config.before(:each) do 
+    @bob = User.create(name: "Bob", email: "bob@email.com", password_digest: "1234")
+    @angel = User.create(name: "Angel", email: "angel@email.com", password_digest: "password")
+    
+    @anxious_andy = Distortion.create(name: "Anxious Andy")
+    @macho_mike = Distortion.create(name: "Macho Mike")
+    @hurtful_harry = Distortion.create(name: "Hurtful Harry")
+    @belittling_betty = Distortion.create(name: "Belittling Betty")
+    @critical_carl = Distortion.create(name: "Critical Carl")
+    @superstitious_sally = Distortion.create(name: "Superstitious Sally")
+
+    @school_tag = Tag.create(name: "school")
+    @relationship_tag = Tag.create(name: "relationship")
+    @work_tag = Tag.create(name: "work")
+
+    @log = @bob.logs.build(content: "I always lose.", before_rating: 1, after_rating: 2, distortion_id: 1, tags: [@work_tag], created_at: "2016-03-15 22:14:34" )
+    @log1 = @bob.logs.build(content: "I should have done better.", before_rating: 5, after_rating: 6, distortion_id: 2, tags: [@work_tag, @school_tag], created_at: "2016-03-14 22:14:34")
+    @log2 = @bob.logs.build(content: "Nobody likes me.", before_rating: 2, after_rating: 7, distortion_id: 3, tags: [@work_tag, @relationship_tag], created_at: "2016-03-13 22:14:34")
+    @log3 = @angel.logs.build(content: "If I'm not perfect I have failed.", before_rating: 1, after_rating: 9, distortion_id: 4, tags: [@work_tag, @school_tag, @relationship_tag], created_at: "2016-03-12 22:14:34")
+    @log4 =@angel.logs.build(content: "I feel embarassed so I must be an idiot.", before_rating: 4, after_rating: 10, distortion_id: 5, tags: [@school_tag, @work_tag])
+
+    @ladybug_one = LadyBug.create(content: "you had a really great time with your friends yesterday")
+    @ladybug_two = LadyBug.create(content: "you finished all of your homework early")
+    @ladybug_three = LadyBug.create(content: "you got an A on that test")
+
+    @bob.save
+    @angel.save
+  end
+
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"
