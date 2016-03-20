@@ -68,11 +68,7 @@
     <% end %>
     </p>
     </header>
-    <div class="post-meta">
-      <% log.lady_bugs.each do |lady_bug| %>
-        <p><%= lady_bug.content %></p>
-      <% end %>
-    </div>
+ 
 
 
     <%= link_to "Delete Log", log_path(log.id), method: "delete", class: "btn btn-danger btn-sm pull-right"%>
