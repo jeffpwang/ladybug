@@ -46,7 +46,15 @@
     
         <div class="post-description">
           <p>
-            <%= log.content %>
+            <%= log.content %><br>
+
+            <ul>
+                <% log.lady_bugs.each do |lady_bug| %>
+                <li><p class="triangle-isosceles left"><%= lady_bug.content %><p<</li>
+                <% end %>
+            </ul>
+
+
           </p>
         </div>
     </section>
@@ -60,10 +68,6 @@
     <% end %>
     </p>
     </header>
-
-    <% log.lady_bugs.each do |lady_bug| %>
-        <%= lady_bug.content %>
-    <% end %>
 
     <% end %>
 
