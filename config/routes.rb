@@ -5,9 +5,7 @@ Rails.application.routes.draw do
   resources :logs
   resources :tags
   resources :users
-  # resources :users only: [:show] do
-  #   resources :tags only: [:show]
-  # end
+
 
   root  'pages#home'
   get 'about'  => 'pages#about'

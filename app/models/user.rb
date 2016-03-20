@@ -11,10 +11,9 @@
 class User < ActiveRecord::Base
 
      has_many :logs, dependent: :destroy
-     has_many :lady_bugs, through: :logs
+     has_many :lady_bugs, through: :logs, dependent: :destroy
      has_many :distortions, through: :logs
      has_many :tags, through: :logs
-     after_destroy :cleanup
 
 	has_secure_password
      validates :name, presence: true, uniqueness: true

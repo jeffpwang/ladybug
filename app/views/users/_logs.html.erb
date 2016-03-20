@@ -1,7 +1,7 @@
 <div class="posts">
    <h1 class="content-subhead">Log Entries</h1>
-
-    <% @logs.each do |log| %>
+ 
+    <% @logs.reverse_each do |log| %>
     <section class="post">
       <header class="post-header">
         <% if !log.distortion.nil? %>
@@ -63,12 +63,21 @@
     
     <p class="post-meta">
         Tags:
-    <% log.tags.uniq.each do |tag| %>
+    <% log.tags.each do |tag| %>
           <a class="post-category post-category-design" href="<%=tag_path(tag.id) %>"><%= tag.name %></a>
     <% end %>
     </p>
     </header>
+    <div class="post-meta">
+      <% log.lady_bugs.each do |lady_bug| %>
+        <p><%= lady_bug.content %></p>
+      <% end %>
+    </div>
 
+
+    <%= link_to "Delete Log", log_path(log.id), method: "delete", class: "btn btn-danger btn-sm pull-right"%>
+    <%= link_to "Edit Log", edit_log_path(log.id), class: "btn btn-info btn-sm pull-right", style: "margin-right: 20px" %>
+    <br />
     <% end %>
 
 </div>
