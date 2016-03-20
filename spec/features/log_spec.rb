@@ -19,7 +19,13 @@ describe "creating logs" do
     # Is the user redirected to a page that displays the postive thought?
 
     it "should create a log when the form is submitted" do
-      fill_in 'log_content', with: "Sad"     
+
+      fill_in 'log_content', with: "Sad"
+      fill_in 'log_tag_new', with: "#drama"
+      find(:css, "#log_tag_ids_2[value='2']").set(true)      
+      # select '1', from: "log_before_rating"
+      # select '10', from: "log_after_rating"      
+
       click_button('Create Log')
       expect(page).to have_content("Sad")
       expect(Log.first.content).to eq("Sad")
