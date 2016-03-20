@@ -3,11 +3,11 @@ class UsersController < ApplicationController
 	skip_before_filter :authorize
 
 	def new
-	if current_user
-		redirect_to user_path(current_user.id)
-	else
-	  @user = User.new
-	 end
+		if current_user
+			redirect_to user_path(current_user.id)
+		else
+		  @user = User.new
+		end
 	end
 
 	def create
@@ -26,11 +26,11 @@ class UsersController < ApplicationController
 		@logs = @user.logs.paginate(:page => params[:page], :per_page => 3)
 	end
 
-	def delete
+	def destroy
 		@user = User.find(current_user[:id])
 		@user.destroy
-		@user.cleanup
-		# redirect_to 
+		session[:user_id] = nil		
+		redirect_to root_path
 	end
 
 	# def edit

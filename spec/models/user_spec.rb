@@ -25,7 +25,6 @@ RSpec.describe User, type: :model do
   end
 
  describe '#valid?' do
-
     context 'when its name is blank' do
   		let(:user) do
   			FactoryGirl.build(:user, :name => nil)

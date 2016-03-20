@@ -14,7 +14,7 @@
 
   <%= f.association :distortion, as: :radio_buttons, item_label_class: "radio-inline", item_wrapper_tag: false %>
 
-  <%= f.association :tags, as: :check_boxes, item_label_class: "radio-inline", item_wrapper_tag: false %>
+  <%= f.association :tags, collection: Tag.get_tags_for_a_user(current_user.id), as: :check_boxes, item_label_class: "radio-inline", item_wrapper_tag: false %>
 
   <div class="row control-group">
     <div class="form-group col-xs-12 floating-label-form-group controls">

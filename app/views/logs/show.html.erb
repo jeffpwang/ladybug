@@ -4,4 +4,6 @@ Post for (INSERT DATE HERE):
 <%= @log.belief_id %> <%= @log.distortion_id %>
 <p>
 When you started today you were feeling at: <%= @log.before_rating %></p>
-
+<% @log.tags.each do |tag| %>
+	<%= tag.name %>
+<% end %>
