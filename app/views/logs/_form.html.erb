@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <%= f.association :lady_bugs, label_method: :content %>
+  <%= f.association :lady_bugs, collection: LadyBug.get_ladybugs_for_a_user(current_user.id), label_method: :content %>
 
   <div class="range-wrapper">
     <input type="range" min="0" max="10" name="log[after_rating]" id="log_after_rating">
