@@ -42,6 +42,11 @@ class Log < ActiveRecord::Base
 			self.tags << @tag
 		end 
 		self.save
-	end 
+	end
+
+
+	def self.most_active_user
+		Log.group(:user_id).order("count_id DESC").limit(1).count("id")
+	end
 
 end
