@@ -10,4 +10,6 @@
 #
 
 class LogLadyBug < ActiveRecord::Base
+  belongs_to :log
+  belongs_to :lady_bug
 end

@@ -103,7 +103,6 @@ GEM
       rspec (>= 2.99.0, < 4.0)
     hightop (0.1.4)
       activerecord
-    hirb (0.7.3)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -271,7 +270,6 @@ DEPENDENCIES
   google-analytics-rails
   guard-rspec
   hightop
-  hirb
   jbuilder (~> 2.0)
   jquery-rails
   pg

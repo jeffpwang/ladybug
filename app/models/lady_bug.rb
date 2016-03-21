@@ -19,7 +19,7 @@ class LadyBug < ActiveRecord::Base
 
 
 	def self.get_ladybugs_for_a_user(user_id)
-		LadyBug.joins(:log).where("logs.user_id" => user_id).group("lady_bugs.id")
+		LadyBug.where("lady_bugs.user_id" => user_id)
 	end	
 
 end

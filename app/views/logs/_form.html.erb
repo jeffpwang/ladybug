@@ -21,7 +21,7 @@
     <%= f.input :tag_new, placeholder: "New Tags (ex. #love #drama #summer2015)"%>
     </div>
   </div>
-
+e
   <%= f.association :lady_bugs, collection: LadyBug.get_ladybugs_for_a_user(current_user.id), label_method: :content %>
 
   <div class="range-wrapper">

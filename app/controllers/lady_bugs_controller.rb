@@ -7,7 +7,7 @@ class LadyBugsController < ApplicationController
   def create
     @ladybug = current_user.lady_bugs.build(ladybug_params)
     if @ladybug.save
-    redirect_to @ladybug
+      redirect_to new_log_path
     else
       render :new
     end

@@ -5,6 +5,7 @@ class LogsController < ApplicationController
 	def new
 		@log = Log.new
 		@log.tags.build
+		@log.lady_bugs.build
 	end
 
 	def create
