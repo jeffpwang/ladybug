@@ -36,7 +36,7 @@ class LogsController < ApplicationController
 	end
 
 	def index
-		@logs = current_user.logs.paginate(:page => params[:page], :per_page => 5)
+		@logs = current_user.logs.order('created_at DESC').paginate(:page => params[:page], :per_page => 5)
 	end
 
 	def destroy
