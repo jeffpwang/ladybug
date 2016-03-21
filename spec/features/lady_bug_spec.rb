@@ -1,29 +1,12 @@
 require 'feature_helper'
 
-describe "creating ladybugs" do
-  context "on the new ladybugs page" do
-    before do
-      @user = FactoryGirl.create(:user)
-      page.set_rack_session(:user_id => @user.id)  
-      visit new_lady_bug_path
-    end      
+feature 'User creates an account' do
+  scenario 'they see the user login form on the page' do
+    visit new_user_path
 
-    it "should have a form to create the ladybug" do
-      expect(page).to have_css("form#new_lady_bug")
+    fill_in 'Name', with: 'Tommy'
+    click_button 'Create User'
 
-    end    
-
-
-    # After submitting the form out with the given name, does the
-    # ladybug exist in the database?
-    #
-    # Is the user redirected to a page that displays the postive thought?
-    it "should create a ladybug when the form is submitted" do
-      fill_in 'lady_bug_content', with: 'Happy'
-      click_button('Create Ladybug')
-      expect(LadyBug.first.content).to eq("Happy")      
-      expect(page).to have_content("Happy")
-    end
-
-  end
+    expect(page).to have_css '.user-name'
+end
 end

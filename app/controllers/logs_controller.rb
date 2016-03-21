@@ -21,6 +21,7 @@ class LogsController < ApplicationController
 	end
 
 	def show
+		@log = Log.find(params[:id])
 	end
 
 	def edit
@@ -52,8 +53,7 @@ class LogsController < ApplicationController
 	end
 
 	def logs_params
-		params.require(:log).permit(:content, :before_rating, :after_rating, :belief_id, :distortion_id, :tag_ids => [], :lady_bug_ids => [])
+	 params.require(:log).permit(:tag_new, :content, :before_rating, :after_rating, :belief_id, :distortion_id, :lady_bug_ids => [], :tag_ids => [])
 	end
-
 
 end

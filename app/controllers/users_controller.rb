@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@logs = @user.logs.paginate(:page => params[:page], :per_page => 3)
+		@logs = @user.logs.order('created_at ASC').paginate(:page => params[:page], :per_page => 3)
 	end
 
 	def destroy
