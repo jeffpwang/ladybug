@@ -11,7 +11,7 @@
 class User < ActiveRecord::Base
 
      has_many :logs, dependent: :destroy
-     has_many :lady_bugs, through: :logs, dependent: :destroy
+     has_many :lady_bugs, dependent: :destroy
      has_many :distortions, through: :logs
      has_many :tags, through: :logs
 

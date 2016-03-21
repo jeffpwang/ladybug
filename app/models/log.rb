@@ -17,7 +17,8 @@ class Log < ActiveRecord::Base
 	belongs_to :distortion
 	belongs_to :user
 	belongs_to :belief
-	has_many :lady_bugs
+	has_many :log_lady_bugs
+  has_many :lady_bugs, through: :log_lady_bugs
 	has_many :log_tags
 	has_many :tags, through: :log_tags
 
