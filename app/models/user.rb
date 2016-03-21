@@ -75,7 +75,7 @@ class User < ActiveRecord::Base
      end 
 
      def average_overall
-          each_rating_average.sum / self.logs.count unless self.logs.count == 0 
+          '%.2f' % (each_rating_average.sum / self.logs.count) unless self.logs.count == 0 
      end 
 
      def recent_logs

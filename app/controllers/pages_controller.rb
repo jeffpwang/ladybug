@@ -21,6 +21,7 @@ class PagesController < ApplicationController
      ["When you doubt your power, you give power to your doubt", "Honore de Balzac"], 
      ["Be happy for no reason like a child. If you are happy for a reason you’re in trouble, because that reason can be taken from you.", "Deepak Chopra"],
      ["The pessimist sees difficulty in every opportunity. The optimist sees the opportunity in every difficulty.", "Winston Churchill"]
+     ["Don't let yesterday use up too much of today.", "Will Rogers"]
      ].sample
   end
 
