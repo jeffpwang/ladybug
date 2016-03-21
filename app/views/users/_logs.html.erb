@@ -1,7 +1,7 @@
 <div class="posts">
    <h1 class="content-subhead">Log Entries</h1>
  
-    <% @logs.reverse_each do |log| %>
+    <% @logs.each do |log| %>
     <section class="post">
       <header class="post-header">
         <% if !log.distortion.nil? %>

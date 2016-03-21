@@ -24,11 +24,9 @@ class LogsController < ApplicationController
 	end
 
 	def edit
-		find_log
 	end
 
 	def update
-		find_log
 		@log.update(logs_params)
 		@log.tag_new=(params[:log][:tag_new])
 	 	redirect_to user_path(current_user.id)
