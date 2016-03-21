@@ -109,5 +109,13 @@ describe "#average_after_mood" do
       end
     end 
   end 
+
+    describe "#pair_of_ratings" do 
+    context 'display before and after rating' do 
+      it 'shows before and after rating user' do
+        expect(@bob.pair_of_ratings).to eq([[1, 2], [5, 6], [2, 7]])
+      end
+    end 
+  end
   
 end
